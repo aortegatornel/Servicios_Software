@@ -5,7 +5,7 @@
 	elementFormDefault="qualified">
 	
  	<xs:simpleType name="DNI">
-		<xs:restriction base="xs:ID">
+		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-9]{8}[A-Z]"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -36,13 +36,13 @@
  	
  	<xs:simpleType name="Id">
  			<xs:restriction base="xs:ID">
- 				<xs:pattern value="[A-Z]{3}[0-9]{6}"/>
+ 				<xs:pattern value="[A-Z]{3}-[0-9]{6}"/>
  			</xs:restriction>
  	</xs:simpleType>
  			
 	<xs:complexType name="Seguro">
  		<xs:sequence>
- 			<xs:element name="vehiculo" type="tns:Vehiculo" minOccurs="0" maxOccurs="unbounded"/>
+ 			<xs:element name="vehiculo" type="tns:Vehiculo" />
  		</xs:sequence>
  		<xs:attribute name="id" type="tns:Id" use="required"/>
  		<xs:attribute name="precioBase" type="xs:double" use="required"/>
@@ -77,7 +77,7 @@
 	<xs:element name="Aseguradora">
 		<xs:complexType>
 		 <xs:sequence>
-		  <xs:element name="cliente" type="tns:Cliente" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		  <xs:element name="cliente" type="tns:Cliente" minOccurs="0" maxOccurs="unbounded"/>
 		 </xs:sequence>
 		</xs:complexType>
 	</xs:element>
