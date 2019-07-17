@@ -6,7 +6,7 @@
 	
  	<xs:simpleType name="DNI">
 		<xs:restriction base="xs:ID">
-			<xs:pattern value="[A-Z][-][0-9]{3}[-][A-Z]{6}"/>
+			<xs:pattern value="[0-9]{8}[A-Z]"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -36,7 +36,7 @@
  	
  	<xs:simpleType name="Id">
  			<xs:restriction base="xs:ID">
- 				<xs:pattern value="[A-Z][0-9]{4}"/>
+ 				<xs:pattern value="[A-Z]{3}[0-9]{6}"/>
  			</xs:restriction>
  	</xs:simpleType>
  			
