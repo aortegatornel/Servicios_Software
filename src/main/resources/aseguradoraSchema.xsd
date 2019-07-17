@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.unican.es/ss/SegudosDomain" 
+	xmlns:tns="http://www.unican.es/ss/SegudosDomain" 
+	elementFormDefault="qualified">
+	
+ 	<xs:simpleType name="DNI">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="[A-Z][-][0-9]{3}[-][A-Z]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+ 	<xs:complexType name="Cliente">
+ 		<xs:sequence>
+ 			<xs:element name="seguros" type="tns:Seguro"/>	
+ 		</xs:sequence>	
+ 		<xs:attribute name="nombre" type="xs:string" use="required"/>
+ 		<xs:attribute name="email" type="xs:string" use="required"/>
+ 		<xs:attribute name="dni" type="tns:DNI" use="required"/>
+ 	</xs:complexType>
+ 	
+ 	<xs:simpleType name="Matricula">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="[A-Z]{3}[0-9]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+ 	
+ 	<xs:complexType name="Vehiculo">
+ 		<xs:attribute name="matricula" type="tns:Matricula" use="required"/>
+ 		<xs:attribute name="cv" type="xs:integer" use="required"/>
+ 		<xs:attribute name="esProfesional" type="xs:boolean" use="required"/>
+ 	</xs:complexType>
+ 	
+ 	<xs:simpleType name="Id">
+ 			<xs:restriction base="xs:ID">
+ 				<xs:pattern value="[A-Z][0-9]{4}"/>
+ 			</xs:restriction>
+ 	</xs:simpleType>
+ 			
+	<xs:complexType name="Seguro">
+ 		<xs:sequence>
+ 			<xs:element name="vehiculo" type="tns:Vehiculo"/>
+ 		</xs:sequence>
+ 		<xs:attribute name="id" type="tns:Id" use="required"/>
+ 		<xs:attribute name="precioBase" type="xs:double" use="required"/>
+ 	</xs:complexType>	
+ 	
+ 	<xs:complexType name="Terceros">
+ 		<xs:complexContent>
+ 			<xs:extension base="tns:Seguro"/>
+ 		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="TodoRiesgo">
+ 		<xs:complexContent>
+ 			<xs:extension base="tns:Seguro"/>
+ 		</xs:complexContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="TRFranquicia">
+ 		<xs:complexContent>
+ 			<xs:extension base="tns:Seguro"/>
+ 		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:element name="Aseguradora">
+		<xs:complexType>
+		 <xs:sequence>
+		  <xs:element name="cliente" type="tns:Cliente"></xs:element>
+		 </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
