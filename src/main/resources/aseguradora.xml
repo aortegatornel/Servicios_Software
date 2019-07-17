@@ -17,6 +17,13 @@
     <tns:seguros id="A0003" precioBase="200.0">
       <tns:vehiculo matricula="PLX9797" cv="60" esProfesional="false"/>
     </tns:seguros>
+    
+    <tns:parte importe="350.0" fecha="2001-12-31T12:00:00" seguroRef="A0002"
+    	idParte="001" />
+    	
+    <tns:parte importe="350.0" fecha="2001-12-31T12:00:00" seguroRef="A0002"
+    	idParte="002" />
+    
   </tns:cliente>
   
   <tns:cliente nombre="Lucía Rodriguez" email="correoDeEjemplo3@correo.com" dni="P-183-AQHYGW" >
