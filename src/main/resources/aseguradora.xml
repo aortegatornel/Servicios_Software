@@ -2,22 +2,24 @@
 <tns:Aseguradora xmlns:tns="http://www.unican.es/ss/SegudosDomain" 
 				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 				 xsi:schemaLocation="http://www.unican.es/ss/SegudosDomain AseguradoraSchema.xsd ">
+				 
   <tns:cliente dni="S-123-AQHYGW" email="correoDeEjemplo@correo.com" nombre="Andrés Ortega">
     <tns:seguros id="A0001" precioBase="200.0">
       <tns:vehiculo matricula="PLL9597" cv="75" esProfesional="false"/>
     </tns:seguros>
   </tns:cliente>
   
-  <tns:cliente dni="A-173-AQXYGQ" email="correoDeEjemplo2@correo.com" nombre="Pablo Prieto">
+  <tns:cliente nombre="Pablo Prieto" email="correoDeEjemplo2@correo.com" dni="A-173-AQXYGQ">
     <tns:seguros id="A0002" precioBase="600.0">
       <tns:vehiculo matricula="PLX9597" cv="105" esProfesional="true"/>
     </tns:seguros>
+
     <tns:seguros id="A0003" precioBase="200.0">
       <tns:vehiculo matricula="PLX9797" cv="60" esProfesional="false"/>
     </tns:seguros>
   </tns:cliente>
   
-  <tns:cliente dni="P-183-AQHYGW" email="correoDeEjemplo3@correo.com" nombre="Lucía Rodriguez">
+  <tns:cliente nombre="Lucía Rodriguez" email="correoDeEjemplo3@correo.com" dni="P-183-AQHYGW" >
     <tns:seguros id="A0004" precioBase="600.0">
       <tns:vehiculo matricula="JLL9551" cv="150" esProfesional="true"/>
     </tns:seguros>
