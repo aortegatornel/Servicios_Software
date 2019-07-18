@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	targetNamespace="http://www.unican.es/ss/SegudosDomain" 
-	xmlns:tns="http://www.unican.es/ss/SegudosDomain" 
+	targetNamespace="http://www.unican.es/ss/SegurosDomain" 
+	xmlns:tns="http://www.unican.es/ss/SegurosDomain" 
 	elementFormDefault="qualified">
 	
  	<xs:simpleType name="DNI">
