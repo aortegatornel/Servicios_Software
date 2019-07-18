@@ -20,6 +20,14 @@ public abstract class Seguro implements Serializable{
 	
 	public Seguro(){}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
+	}
+
 	public abstract double calculaPrecio();
 
 	public Vehiculo getVehiculo() {
@@ -33,4 +41,5 @@ public abstract class Seguro implements Serializable{
 	public String getId() {
 		return id;
 	}
+
 }

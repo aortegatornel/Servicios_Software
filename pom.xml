@@ -3,7 +3,7 @@
   <groupId>es.unican.ss</groupId>
   <artifactId>practica01</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+ 
   <dependencies>
   	<dependency>
     	<groupId>javax.xml.bind</groupId>
@@ -12,4 +12,4 @@
 	</dependency>	
   </dependencies>
   
-</project>
+</project>	

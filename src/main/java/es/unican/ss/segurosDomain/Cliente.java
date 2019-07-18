@@ -32,8 +32,6 @@ public class Cliente implements Serializable{
 		seguros=new LinkedList<Seguro>();
 	}
 	
-	public Cliente(){}
-	
 	public boolean anadeSeguro(Seguro s){
 		seguros.add(s);
 		return true;
@@ -65,6 +63,10 @@ public class Cliente implements Serializable{
 
 	public String getDni() {
 		return dni;
+	}
+	
+	public void setDni(String dni) {
+		this.dni=dni;
 	}
 
 	public List<Seguro> getSeguros() {

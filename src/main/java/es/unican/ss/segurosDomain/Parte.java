@@ -27,8 +27,6 @@ public class Parte implements Serializable{
 		this.fecha=fecha;
 		this.idParte=idParte;
 	}
-	
-	public Parte() {}
 
 	public double getImporte() {
 		return importe;
