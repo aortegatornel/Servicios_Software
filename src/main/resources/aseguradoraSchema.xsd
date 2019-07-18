@@ -42,7 +42,7 @@
  			
 	<xs:complexType name="Seguro">
  		<xs:sequence>
- 			<xs:element name="vehiculo" type="tns:Vehiculo" />
+ 			<xs:element name="vehiculo" type="tns:Vehiculo"/>
  		</xs:sequence>
  		<xs:attribute name="id" type="tns:Id" use="required"/>
  		<xs:attribute name="precioBase" type="xs:double" use="required"/>

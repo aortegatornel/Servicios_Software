@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlType;
 
 @SuppressWarnings("serial")
@@ -12,6 +13,7 @@ public class Parte implements Serializable{
 	@XmlAttribute(required=true)
 	private double importe;
 	@XmlAttribute(required=true)
+	@XmlIDREF
 	private String IdSeguro;
 	@XmlAttribute(required=true)
 	private Date fecha;

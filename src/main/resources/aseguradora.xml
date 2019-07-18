@@ -4,17 +4,17 @@
 				 xsi:schemaLocation="http://www.unican.es/ss/SegurosDomain AseguradoraSchema.xsd ">
 				 
   <tns:cliente dni="12345678S" email="correoDeEjemplo@correo.com" nombre="Andrés Ortega">
-    <tns:seguros id="AAA-123456" precioBase="200.0">
+    <tns:seguros id="AAA-123456" precioBase="200.0" xsi:type="tns:TRFranquicia"> 
       <tns:vehiculo matricula="PLL9597" cv="75" esProfesional="false"/>
     </tns:seguros>
   </tns:cliente>
   
   <tns:cliente nombre="Pablo Prieto" email="correoDeEjemplo2@correo.com" dni="12345678F">
-    <tns:seguros id="BBB-123456" precioBase="600.0">
+    <tns:seguros id="BBB-123456" precioBase="600.0" xsi:type="tns:TodoRiesgo">
       <tns:vehiculo matricula="PLX9597" cv="105" esProfesional="true"/>
     </tns:seguros>
 
-    <tns:seguros id="BBB-123465" precioBase="200.0">
+    <tns:seguros id="BBB-123465" precioBase="200.0" xsi:type="tns:Terceros">
       <tns:vehiculo matricula="PLX9797" cv="60" esProfesional="false"/>
     </tns:seguros>
     
@@ -27,7 +27,7 @@
   </tns:cliente>
   
   <tns:cliente nombre="Lucía Rodriguez" email="correoDeEjemplo3@correo.com" dni="12345678V" >
-    <tns:seguros id="CCC-324564" precioBase="600.0">
+    <tns:seguros id="CCC-324564" precioBase="600.0" xsi:type="tns:TodoRiesgo">
       <tns:vehiculo matricula="JLL9551" cv="150" esProfesional="true"/>
     </tns:seguros>
   </tns:cliente>

@@ -13,7 +13,7 @@ public abstract class Seguro implements Serializable{
 	@XmlAttribute(required = true)
 	@XmlID
 	private String id;
-	@XmlElement(required = true)	//??
+	@XmlElement(required = true)
 	protected Vehiculo vehiculo;
 	@XmlAttribute(required = true)
 	protected double precioBase;

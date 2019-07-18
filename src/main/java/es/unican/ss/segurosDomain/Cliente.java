@@ -3,6 +3,8 @@ package es.unican.ss.segurosDomain;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,7 +12,7 @@ import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlType;
 
 @SuppressWarnings({ "serial" })
-@XmlAccessorType()	//????
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Cliente")
 public class Cliente implements Serializable{
 	@XmlAttribute(required = true)
