@@ -12,6 +12,9 @@ public class Aseguradora {
 	
 	@XmlElement(name = "clientes", type = Cliente.class, required=true)
 	private List<Cliente> clientes=new LinkedList<Cliente>();
-		
+	
+	@XmlElement(name = "partes", type = Parte.class, required=true)
+	private List<Parte> partes=new LinkedList<Parte>();
+	
 	public Aseguradora(){}
 }

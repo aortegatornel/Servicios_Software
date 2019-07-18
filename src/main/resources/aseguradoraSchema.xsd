@@ -48,14 +48,6 @@
  		<xs:attribute name="precioBase" type="xs:double" use="required"/>
  	</xs:complexType>	
  	
- 	<xs:complexType name="Parte">
- 		<xs:attribute name="importe" type="xs:double" use="required"/>
- 		<xs:attribute name="fecha" type="xs:dateTime" use="required"/>
- 		<!-- para hacer referencia a un ID unico se usa IDREF -->
- 		<xs:attribute name="seguroRef" type="xs:IDREF" use="required"/>
-		<xs:attribute name="idParte" type="xs:int" use="required"/>
- 	</xs:complexType>
- 	
  	<xs:complexType name="Terceros">
  		<xs:complexContent>
  			<xs:extension base="tns:Seguro"/>
@@ -73,6 +65,14 @@
  			<xs:extension base="tns:Seguro"/>
  		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:complexType name="Parte">
+ 		<xs:attribute name="importe" type="xs:double" use="required"/>
+ 		<xs:attribute name="fecha" type="xs:dateTime" use="required"/>
+ 		<!-- para hacer referencia a un ID unico se usa IDREF -->
+ 		<xs:attribute name="seguroRef" type="xs:IDREF" use="required"/>
+		<xs:attribute name="idParte" type="xs:int" use="required"/>
+ 	</xs:complexType>
 	
 	<xs:element name="Aseguradora">
 		<xs:complexType>
