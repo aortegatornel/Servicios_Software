@@ -6,8 +6,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial" })
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="Parte")
 public class Parte implements Serializable{
 	@XmlAttribute(required=true)

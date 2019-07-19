@@ -6,8 +6,11 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 @SuppressWarnings({ "serial" })
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Seguro")
 public abstract class Seguro implements Serializable{
 	@XmlAttribute(required = true)
