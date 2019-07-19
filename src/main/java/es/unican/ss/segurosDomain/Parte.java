@@ -1,32 +1,30 @@
 package es.unican.ss.segurosDomain;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
 @SuppressWarnings({ "serial" })
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(value=XmlAccessType.FIELD)
 @XmlType(name="Parte")
 public class Parte implements Serializable{
 	@XmlAttribute(required=true)
 	private double importe;
 	@XmlAttribute(required=true)
 	@XmlIDREF
-	private String IdSeguro;
+	private Seguro seguroRef;
 	@XmlAttribute(required=true)
 	private Date fecha;
 	@XmlAttribute(required=true)
-	@XmlID
-	private String idParte;
+	private Integer idParte;
 	
-	public Parte (double importe, String idSeguro, Date fecha, String idParte) {
+	public Parte (double importe,Seguro seguro, Date fecha, Integer idParte) {
 		this.importe=importe;
-		this.IdSeguro=idSeguro;
+		this.seguroRef=seguro;
 		this.fecha=fecha;
 		this.idParte=idParte;
 	}
@@ -36,14 +34,14 @@ public class Parte implements Serializable{
 	}
 
 	public String getIdSeguro() {
-		return IdSeguro;
+		return seguroRef.getId();
 	}
 
 	public Date getFecha() {
 		return fecha;
 	}
 
-	public String getIdParte() {
+	public Integer getIdParte() {
 		return idParte;
 	}
 }

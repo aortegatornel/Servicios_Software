@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @SuppressWarnings({ "serial" })
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Seguro")
+
 public abstract class Seguro implements Serializable{
 	@XmlAttribute(required = true)
 	@XmlID
