@@ -67,9 +67,9 @@
 	</xs:complexType>
 	
 	<xs:complexType name="Parte">
-	<xs:sequence>
-		  <xs:element name="seguroRef" type="tns:Seguro" minOccurs="0" maxOccurs="unbounded"/>
-		 </xs:sequence>
+		<xs:sequence>
+			<xs:element name="seguroRef" type="xs:IDREF"/>
+		</xs:sequence>
  		<xs:attribute name="importe" type="xs:double" use="required"/>
  		<xs:attribute name="fecha" type="xs:dateTime" use="required"/>
 		<xs:attribute name="idParte" type="xs:int" use="required"/>

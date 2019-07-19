@@ -18,7 +18,7 @@
       <tns:vehiculo matricula="PLX9797" cv="60" esProfesional="false"/>
     </tns:seguros>
     
-    <tns:parte importe="350.0" fecha="2001-12-31T12:00:00" seguroRef="BBB-123456"
+    <tns:parte importe="350.0" fecha="2001-12-31T12:00:00"
     	idParte="001" />
     	
     <tns:parte importe="350.0" fecha="2001-12-31T12:00:00" seguroRef="BBB-123465"

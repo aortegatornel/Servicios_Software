@@ -3,6 +3,7 @@ package es.unican.ss.segurosDomain;
 import java.io.Serializable; 
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,7 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 public class Parte implements Serializable{
 	@XmlAttribute(required=true)
 	private double importe;
-	@XmlAttribute(required=true)
+	@XmlElement(required=true)
 	@XmlIDREF
 	private Seguro seguroRef;
 	@XmlAttribute(required=true)
