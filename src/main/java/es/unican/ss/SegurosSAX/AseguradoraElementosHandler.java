@@ -38,56 +38,49 @@ public class AseguradoraElementosHandler extends DefaultHandler{
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		switch (qName) {
-		case "p:persona":
-			//	Nueva persona, nueva lista de ids de seguros
+		case "cliente":
+			//	Nueva persona se renueva lista de ids de seguros
 			idsSeguros.clear(); 
+			precioTotal=0;
+			dni = attributes.getValue("dni");
 			break;
-		case "p:seguro":
+		case "seguro":
 			//	Cogemos el id del seguro, que, al ser un atributo, lo obtenemos como un atributo
 			idSeguro = attributes.getValue("id");
 			idsSeguros.add(idSeguro);
-
+			tipoSeguro = attributes.getValue("xsi:type");
 			break;
+		case "parte":
+			fecha = attributes.getValue("fecha");
+			break;
+		case "vehiculo":
+			potencia = Double.parseDouble(attributes.getValue("potencia"));
+			usoProfesional = Boolean.parseBoolean(attributes.getValue("esProfesional"));
+			break;
+		default:
 		}
 	}
 
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-		switch (qName) {
-		case "p:dni":
-			dni = texto;
-			System.out.println("dni: " + dni);
-			break;
-		case "p:fecha":
-			fecha = texto;
-			break;
-		case "p:seguroRef":
-			idSeguroParte = texto;
-			break;		
-		case "p:parte":
+		switch (qName) {		
+		case "parte":
 			// Comprobamos si el parte se corresponde con el seguro
 			if (!(idsSeguros.contains(idSeguroParte))) {
 				System.out.println("El parte de accidente con fecha " + fecha + " no pertenece a ningún seguro.");
 			}
 			break;
-		case "p:potencia":
-			potencia = Double.parseDouble(texto);
-			break;
-		case "p:usoProfesional":
-			usoProfesional = Boolean.parseBoolean(texto);
-			break;
-		case "p:tipo":
-			tipoSeguro = texto;
-			break;
-		case "p:seguro":
+		case "seguro":
 			precioTotal += getPrecio();
 			break;
-		case "p:persona":
-			System.out.println("Precio: " + precioTotal);
-			precioTotal = 0;
+		case "cliente":
+			System.out.println("DNI: " + dni + "Precio: " + precioTotal);
 			break;
-		}
-
+		case "seguroRef":
+			idSeguroParte = texto;
+			break;
+		default:
+		}		
 	}
 
 	@Override
@@ -105,9 +98,9 @@ public class AseguradoraElementosHandler extends DefaultHandler{
 	
 	public double getPrecio() {
 		double precio = 0;
-		if (tipoSeguro == "A_TERCEROS") {
+		if (tipoSeguro == "Terceros") {
 			precio = 200.0;
-		} else if (tipoSeguro == "A_TODO_RIESGO" || tipoSeguro == "A_TODO_RIESGO_CON_FRANQUICIA") {
+		} else if (tipoSeguro == "TodoRiesgo" || tipoSeguro == "TRFranquicia") {
 			precio = 600.0;
 		}
 
