@@ -10,16 +10,13 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
 @SuppressWarnings({ "serial" })
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="Aseguradora")
-@XmlType(name = "Aseguradora")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Aseguradora implements Serializable{
 	
-	@XmlElement(name = "clientes", type = Cliente.class, required=true)
+	@XmlElement(name = "cliente", type = Cliente.class, required=true)
 	private List<Cliente> clientes=new LinkedList<Cliente>();
 	
-	@XmlElement(name = "partes", type = Parte.class, required=true)
-	private List<Parte> partes=new LinkedList<Parte>();
 	
 	public Aseguradora(){}
 	
@@ -27,8 +24,6 @@ public class Aseguradora implements Serializable{
 	public List<Cliente> getClientes(){
 		return clientes;
 	}
-	
-	public List<Parte> getPartes(){
-		return partes;
-	}
+
+
 }

@@ -38,12 +38,12 @@ public abstract class Seguro implements Serializable{
 		return vehiculo;
 	}
 
-	public void asignaVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
-	}
-
 	public String getId() {
 		return id;
+	}
+	
+	public double getPrecio() {
+		return precioBase;
 	}
 
 }

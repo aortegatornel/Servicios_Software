@@ -3,6 +3,7 @@ package es.unican.ss.SegurosSAX;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.tools.ant.types.CommandlineJava.SysProperties;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -38,23 +39,23 @@ public class AseguradoraElementosHandler extends DefaultHandler{
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		switch (qName) {
-		case "cliente":
+		case "tns:cliente":
 			//	Nueva persona se renueva lista de ids de seguros
 			idsSeguros.clear(); 
 			precioTotal=0;
 			dni = attributes.getValue("dni");
 			break;
-		case "seguro":
+		case "tns:seguro":
 			//	Cogemos el id del seguro, que, al ser un atributo, lo obtenemos como un atributo
 			idSeguro = attributes.getValue("id");
 			idsSeguros.add(idSeguro);
 			tipoSeguro = attributes.getValue("xsi:type");
 			break;
-		case "parte":
+		case "tns:parte":
 			fecha = attributes.getValue("fecha");
 			break;
-		case "vehiculo":
-			potencia = Double.parseDouble(attributes.getValue("potencia"));
+		case "tns:vehiculo":
+			potencia = Integer.parseInt(attributes.getValue("cv"));
 			usoProfesional = Boolean.parseBoolean(attributes.getValue("esProfesional"));
 			break;
 		default:
@@ -64,19 +65,19 @@ public class AseguradoraElementosHandler extends DefaultHandler{
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		switch (qName) {		
-		case "parte":
+		case "tns:parte":
 			// Comprobamos si el parte se corresponde con el seguro
 			if (!(idsSeguros.contains(idSeguroParte))) {
 				System.out.println("El parte de accidente con fecha " + fecha + " no pertenece a ningún seguro.");
 			}
 			break;
-		case "seguro":
+		case "tns:seguro":
 			precioTotal += getPrecio();
 			break;
-		case "cliente":
-			System.out.println("DNI: " + dni + "Precio: " + precioTotal);
+		case "tns:cliente":
+			System.out.println("DNI: " + dni + " Precio: " + precioTotal);
 			break;
-		case "seguroRef":
+		case "tns:seguroRef":
 			idSeguroParte = texto;
 			break;
 		default:

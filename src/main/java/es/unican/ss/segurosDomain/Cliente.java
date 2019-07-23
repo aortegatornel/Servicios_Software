@@ -1,6 +1,7 @@
 package es.unican.ss.segurosDomain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,8 +13,9 @@ import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlType;
 
 @SuppressWarnings({ "serial" })
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Cliente")
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Cliente implements Serializable{
 	@XmlAttribute(required = true)
 	private String nombre;
@@ -22,14 +24,16 @@ public class Cliente implements Serializable{
 	private String dni;
 	@XmlAttribute(required = true)
 	private String email;
-	@XmlElement(name = "seguros", type = Seguro.class, required=true)
-	private List<Seguro>seguros;
 	
-	public Cliente(String nombre, String dni, String email){
-		this.nombre=nombre;
-		this.dni=dni;
-		this.email=email;
-		seguros=new LinkedList<Seguro>();
+	@XmlElement(name = "seguro", type = Seguro.class, required=true)
+	private List<Seguro> seguros = new ArrayList<Seguro>();
+	
+	@XmlElement(name="vehiculo", type=Vehiculo.class, required=true)
+	private List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
+	
+
+	public Cliente(){
+
 	}
 	
 	public boolean anadeSeguro(Seguro s){

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tns:Aseguradora xmlns:tns="http://www.unican.es/ss/SegurosDomain" 
 				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-				 xsi:schemaLocation="http://www.unican.es/ss/SegurosDomain AseguradoraSchema.xsd ">
+				 xsi:schemaLocation="http://www.unican.es/ss/SegurosDomain aseguradoraSchema.xsd ">
 				 
   <tns:cliente dni="12345678S" email="correoDeEjemplo@correo.com" nombre="Andrés Ortega">
     <tns:seguros id="AAA-123456" precioBase="200.0" xsi:type="tns:TRFranquicia"> 

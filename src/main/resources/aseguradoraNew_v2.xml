@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<aseguradora xmlns="http://www.unican.es/ss/SegurosDomain">
+	<persona id="idvalue0">
+		<nombre>p:nombre</nombre>
+		<dni>72081666B</dni>
+		<email>alasarmas10@gmail.com</email>
+		<parte id="idvalue1">
+			<fecha>2001-12-31T12:00:00+01:00</fecha>
+			<importeArreglo>80.0</importeArreglo>
+		</parte>
+		<parte id="idvalue4">
+			<fecha>2002-12-31T12:00:00+01:00</fecha>
+			<importeArreglo>100.0</importeArreglo>
+		</parte>
+		<seguro id="idvalue2">
+			<tipoSeguro>A_TERCEROS</tipoSeguro>
+			<vehiculoAsegurado id="idvalue3">
+				<matricula>p:matricula</matricula>
+				<potencia>150.0</potencia>
+				<usoProfesional>true</usoProfesional>
+			</vehiculoAsegurado>
+		</seguro>
+	</persona>
+	<persona id="idvalue8">
+		<nombre>p:nombre</nombre>
+		<dni>63381666A</dni>
+		<email>alasarmas10@gmail.com</email>
+		<parte id="idvalue11">
+			<fecha>2001-12-31T12:00:00+01:00</fecha>
+			<importeArreglo>80.0</importeArreglo>
+		</parte>
+		<parte id="idvalue12">
+			<fecha>2002-12-31T12:00:00+01:00</fecha>
+			<importeArreglo>100.0</importeArreglo>
+		</parte>
+		<seguro id="idvalue9">
+			<tipoSeguro>A_TERCEROS</tipoSeguro>
+			<vehiculoAsegurado id="idvalue10">
+				<matricula>p:matricula</matricula>
+				<potencia>150.0</potencia>
+				<usoProfesional>true</usoProfesional>
+			</vehiculoAsegurado>
+		</seguro>
+	</persona>
+	<persona>
+		<nombre>Fernando</nombre>
+		<dni>72053555C</dni>
+		<email>ofertasLupa@gmail.com</email>
+		<seguro>
+			<numReferencia>AAA-1111</numReferencia>
+			<tipoSeguro>A_TODO_RIESGO</tipoSeguro>
+			<vehiculoAsegurado>
+				<matricula>12345-SA</matricula>
+				<potencia>200.0</potencia>
+				<usoProfesional>false</usoProfesional>
+			</vehiculoAsegurado>
+		</seguro>
+	</persona>
+</aseguradora>
